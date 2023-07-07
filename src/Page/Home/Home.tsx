@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "../../Component/Nav/Nav.tsx";
-import Cube from "../Cube/Cube.tsx";
+import Cube from "../../Component/Cube/Cube.tsx";
 import "./Home.css";
 const Home = () => {
   return (
