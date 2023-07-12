@@ -2,8 +2,8 @@ import React from "react";
 import "./Nav.css";
 const Nav = () => {
   return (
-    <nav id="navbar" class="nav">
-      <ul class="nav-list">
+    <nav id="navbar" className="nav">
+      <ul className="nav-list">
         <li>
           <a href="#welcome-section">About</a>
         </li>
