@@ -1,58 +1,58 @@
-import React from "react";
 import { useEffect, useState } from "react";
 import "./Cursor.css";
 import { motion } from "framer-motion";
 
-export default function Cursor() {
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0,
-  });
-  const [cursorVariant, setCursorVariant] = useState("default");
+const Cursor = () => {
+  const [largecircle, setlargecircle] = useState({ x: 0, y: 0 });
+  const [smallcircle, setsmallcircle] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const mouseMove = (e: any) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
+    const mousemove = (e: any) => {
+      setlargecircle({ x: e.clientX, y: e.clientY });
+      setsmallcircle({ x: e.clientX, y: e.clientY });
     };
-
-    window.addEventListener("mousemove", mouseMove);
+    window.addEventListener("mousemove", mousemove);
 
     return () => {
-      window.removeEventListener("mousemove", mouseMove);
+      window.removeEventListener("mousemove", mousemove);
     };
   }, []);
-
-  const variants = {
-    default: {
-      x: mousePosition.x - 16,
-      y: mousePosition.y - 16,
-    },
-    text: {
-      height: 150,
-      width: 150,
-      x: mousePosition.x - 75,
-      y: mousePosition.y - 75,
-      backgroundColor: "yellow",
-    },
-  };
-  // mixBlendMode: "difference",
-  
-  const textEnter = () => setCursorVariant("text");
-  const textLeave = () => setCursorVariant("default");
-
+  console.log(largecircle);
   return (
-    <div className="">
-      <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className="title">
-        Hello World
-      </h1>
+    <div>
       <motion.div
-        className="cursor"
-        variants={variants}
-        animate={cursorVariant}
-      />
+        animate={{
+          x: largecircle.x ,
+          y: largecircle.y ,
+          transition: { type: "spring", mass: 3 },
+        }}
+        className="large_circle"
+      ></motion.div>
+      <motion.div
+        animate={{
+          x: smallcircle.x - 8,
+          y: smallcircle.y - 8,
+          transition: { type: "spring", mass: 2 },
+        }}
+        className="small_circle"
+      >asdasd</motion.div>
+    <motion.div
+      className="box"
+      animate={{
+        scale: [1, 2, 2, 1, 1],
+        rotate: [0, 0, 180, 180, 0],
+        borderRadius: ["0%", "0%", "50%", "50%", "0%"]
+      }}
+      transition={{
+        duration: 2,
+        ease: "easeInOut",
+        times: [0, 0.2, 0.5, 0.8, 1],
+        repeat: Infinity,
+        repeatDelay: 1
+      }}
+    />
     </div>
   );
-}
+};
+
+export default Cursor;

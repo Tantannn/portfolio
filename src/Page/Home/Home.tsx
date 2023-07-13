@@ -1,7 +1,6 @@
 import React from "react";
 import Nav from "../../Component/Nav/Nav";
 import Cube from "../../Component/Cube/Cube";
-import Cursor from "../../Component/Cursor/Cursor";
 import "./Home.css";
 const Home = () => {
   return (
@@ -61,7 +60,6 @@ const Home = () => {
               <span className="code">&#47;&gt;</span>
             </p>
           </div>
-          <Cursor/>
         </div>
         <button>Show all</button>
        </div>
