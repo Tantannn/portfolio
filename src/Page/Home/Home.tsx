@@ -2,16 +2,31 @@ import React from "react";
 import Nav from "../../Component/Nav/Nav";
 import Cube from "../../Component/Cube/Cube";
 import "./Home.css";
+import Typewriter from "typewriter-effect";
 const Home = () => {
   return (
     <div>
       <Nav />
-      <Cube/>
+      <Cube />
       <div className="mHome">
         <h1>Hi, I am Tan</h1>
-        <p>
-          <i>A Fullstack Developer</i>
-        </p>
+        <div className="typewriter">
+          <Typewriter  
+            options={{
+              strings: [
+                "Frontend Developer",
+                "Backend Developer",
+                "Fullstack Developer",
+                "Mistakes make you stronger"
+              ],
+              autoStart: true,
+              loop: true,
+              deleteSpeed: 10,
+            }}
+        />
+        </div>
+        <p className="quote">“Every difficulty in life presents us with an opportunity to turn inward and to invoke our own submerged inner resources. The trials we endure can and should introduce us to our strengths.”</p>
+        <p>— Epictetus</p>
       </div>
       <div className="pHome">
         <h2>
@@ -62,7 +77,7 @@ const Home = () => {
           </div>
         </div>
         <button>Show all</button>
-       </div>
+      </div>
     </div>
   );
 };

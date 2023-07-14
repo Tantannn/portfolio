@@ -4,6 +4,7 @@
     }
 
     .wrap {
+        border: solid 3px #999;
         margin-top: 300px;
         perspective: 1000px;
         perspective-origin: 50% 50%;

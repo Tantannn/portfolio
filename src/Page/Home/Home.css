@@ -41,7 +41,7 @@
   color: var(--main-gray);
   transition: color 0.3s ease-out;
 }
-.gProject:hover .code{
+.gProject:hover .code {
   color: #ff7f50;
 }
 .project-title {
@@ -49,9 +49,19 @@
   padding: 2rem 0.5rem;
 }
 
-.gProject{
+.gProject {
   background-color: var(--main-gray);
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.typewriter {
+  color: var(--main-red);
+  font-style: italic;
+  padding-bottom: 2rem;
+}
+
+.quote {
+  width: 30%;
 }
