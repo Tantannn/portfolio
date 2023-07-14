@@ -3,27 +3,24 @@ import "./Home.css";
 import Typewriter from "typewriter-effect";
 import { useState } from "react";
 const Home = () => {
-  const [pos, setPos] = useState({ x: 0, y: 0, scale: 1 });
+  const [pos, setPos] = useState(1);
   const onScroll = (e: any) => {
-    // if (e.deltaY > 0) return
-    const delta = e.deltaY * -0.01;
-    const newScale = pos.scale + delta;
-
-    const ratio = 1 - newScale / pos.scale;
-    setPos({
-      scale: newScale,
-      x: pos.x + (e.clientX - pos.x) * ratio,
-      y: pos.y + (e.clientY - pos.y) * ratio,
-    });
+    let zoomSpeed = 0.1;
+    if (pos < 0.4) return setPos(0.4);
+    if (e.deltaY > 0) {
+      setPos(pos - zoomSpeed);
+    } else {
+      setPos(pos + zoomSpeed);
+    }
   };
-    console.log(pos)
+  console.log(pos);
   return (
     <div onWheel={(e) => onScroll(e)}>
       <div
         className="mHome"
         style={{
-          transformOrigin: 'center',
-          transform: `scale(${pos.scale})`,
+          transformOrigin: "center",
+          transform: `scale(${pos})`,
         }}
       >
         <h1>Hi, I am Tan</h1>
@@ -34,7 +31,7 @@ const Home = () => {
                 "Frontend Developer",
                 "Backend Developer",
                 "Fullstack Developer",
-                "Mistakes make you stronger",
+                "Mistakes make us stronger",
               ],
               autoStart: true,
               loop: true,
