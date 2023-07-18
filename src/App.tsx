@@ -3,9 +3,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Page/Home/Home";
 import { Projects } from "./Page/Projects/Projects";
 import AnimatedCursor from "react-animated-cursor";
+import { ParticleBackground } from "./Component/ParticleBackground/ParticleBackground";
 function App() {
   return (
     <BrowserRouter>
+      <ParticleBackground/>
       <AnimatedCursor
         innerSize={15}
         outerSize={15}
