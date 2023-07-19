@@ -3,6 +3,7 @@ import Nav from "../../Component/Nav/Nav";
 import Cube from "../../Component/Cube/Cube";
 import "./Home.css";
 import Typewriter from "typewriter-effect";
+import { ParticleBackground } from "../../Component/ParticleBackground/ParticleBackground";
 const Home = () => {
   return (
     <div>
@@ -11,21 +12,25 @@ const Home = () => {
       <div className="mHome">
         <h1>Hi, I am Tan</h1>
         <div className="typewriter">
-          <Typewriter  
+          <Typewriter
             options={{
               strings: [
                 "Frontend Developer",
                 "Backend Developer",
                 "Fullstack Developer",
-                "Mistakes make you stronger"
+                "Mistakes make you stronger",
               ],
               autoStart: true,
               loop: true,
               deleteSpeed: 10,
             }}
-        />
+          />
         </div>
-        <p className="quote">“Every difficulty in life presents us with an opportunity to turn inward and to invoke our own submerged inner resources. The trials we endure can and should introduce us to our strengths.”</p>
+        <p className="quote">
+          “Every difficulty in life presents us with an opportunity to turn
+          inward and to invoke our own submerged inner resources. The trials we
+          endure can and should introduce us to our strengths.”
+        </p>
         <p>— Epictetus</p>
       </div>
       <div className="pHome">

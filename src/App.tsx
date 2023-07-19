@@ -7,7 +7,6 @@ import { ParticleBackground } from "./Component/ParticleBackground/ParticleBackg
 function App() {
   return (
     <BrowserRouter>
-      <ParticleBackground/>
       <AnimatedCursor
         innerSize={15}
         outerSize={15}
